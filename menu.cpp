@@ -49,7 +49,23 @@ void tampilkanData(int p) {
     cout << sikc[p].nim << " , " << sikc[p].nama << " , " << sikc[p].alamat << " , " << sikc[p].ipk << endl;
 }
 
+void perbaikanData(int p) {
+    system("cls");
+    fflush(stdin);
+    cout << "Masukkan Nama Baru: ";
+    getline(cin, sikc[p].nama);
+    cout << "Masukkan Alamat Baru: ";
+    getline(cin, sikc[p].alamat);
+    cout << "Masukkan IPK Baru: ";
+    cin >> sikc[p].ipk;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
+
 int main() {
     masukanData();
+    masukanData();
+    tampilkanData(0);
+    perbaikanData(0);
+    tampilkanData(0);
     return 0;
 }
