@@ -3,8 +3,7 @@
 #include <conio.h>
 using namespace std;
 
-struct mahasiswa
-{
+struct mahasiswa {
     string nim;
     string nama;
     string alamat;
@@ -12,48 +11,24 @@ struct mahasiswa
 };
 
 mahasiswa sikc[30];
-
 int pos = -1;
 
-void dMenu()
-{
+void masukanData(){
+    pos++;
     system("cls");
-    cout << "Aplikasi KelasQ" << "\n";
-    cout << "1. Masukkan data" << "\n";
-    cout << "2. Tampilkan data" << "\n";
-    cout << "3. Perbaikan data" << "\n";
-    cout << "4. Menghapus data" << "\n";
-    cout << "5. Exit" << "\n";
-    cout << "Masukan angka :";
+    fflush(stdin);
+    cout << "Masukkan NIM: ";
+    getline(cin, sikc[pos].nim);
+    cout << "Masukkan Nama: ";
+    getline(cin, sikc[pos].nama);
+    cout << "Masukkan Alamat: ";
+    getline(cin, sikc[pos].alamat);
+    cout << "Masukkan IPK: ";
+    cin >> sikc[pos].ipk;
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
-int main()
-{
-    int pos = -1;
-
-    do
-    {
-        dMenu();
-        pl = getch();
-
-        switch (pl)
-        {
-        case '1':
-        {
-            pos++;
-            system("cls");
-            fflush(stdin);
-            cout << "masukan nim: ";
-            getline(cin, sikc[pos].nim);
-            cout << "masukan nama: ";
-            getline(cin, sikc[pos].nama);
-            cout << "masukan alamat: ";
-            getline(cin, sikc[pos].alamat);
-            cout << "masukan ipk: ";
-            cin >> sikc[pos].ipk;
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            break;
-        }
-        }
-    }
- }
+int main() {
+    masukanData();
+    return 0;
+}
