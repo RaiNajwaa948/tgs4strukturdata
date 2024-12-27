@@ -61,11 +61,18 @@ void perbaikanData(int p) {
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
+void hapusData(int p) {
+    for (int i = p; i < pos; i++) {
+        sikc[i] = sikc[i + 1];
+    }
+    pos--;
+    cout << "Data berhasil dihapus.\n";
+
 int main() {
     masukanData();
     masukanData();
     tampilkanData(0);
-    perbaikanData(0);
+    hapusData(0);
     tampilkanData(0);
     return 0;
 }
