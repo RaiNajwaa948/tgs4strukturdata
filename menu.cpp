@@ -3,9 +3,6 @@
 #include <conio.h>
 using namespace std;
 
-int data[100];
-int n;
-
 struct mahasiswa
 {
     string nim;
@@ -62,11 +59,21 @@ void perbaikanData(int p) {
 }
 
 void hapusData(int p) {
-    for (int i = p; i < pos; i++) {
-        sikc[i] = sikc[i + 1];
+    tampilkanData(p);
+    cout << "Masukkan nomor data yang ingin dihapus: ";
+    cin >> p;
+    p--;
+    if (p >= 0 && p <= pos) {
+        for (int i = p; i < pos; i++) {
+            sikc[i] = sikc[i + 1];
+        }
+        pos--;
+        cout << "Data berhasil dihapus!" << endl;
+    } else {
+        cout << "Nomor tidak valid!" << endl;
     }
-    pos--;
-    cout << "Data berhasil dihapus.\n";
+
+}
 
 int main()
 {
